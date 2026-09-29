@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Cancelled – VividScope</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .result-page {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+    .result-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      padding: 48px 40px;
+      text-align: center;
+      max-width: 480px;
+      width: 100%;
+    }
+    .result-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #fee2e2;
+      color: #dc2626;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .result-card h1 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+    .result-card p {
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+    .result-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🔬</div>
+        VividScope
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="repair.html">Repair Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+      </nav>
+      <button type="button" class="cart-btn" aria-label="Open cart">
+        🛒<span class="cart-badge">0</span>
+      </button>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="result-page">
+    <div class="result-card">
+      <div class="result-icon">✕</div>
+      <h1 id="title">Checkout Cancelled</h1>
+      <p id="message">Your payment was not completed. Your cart has been saved — you can try again whenever you’re ready.</p>
+      <div class="result-actions">
+        <a href="products.html" class="btn btn-primary">Return to Shop</a>
+        <button type="button" class="btn cart-btn-open" style="background:var(--bg);color:var(--primary);border:1px solid var(--border);" onclick="openCart()">View Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none;padding-top:0;">
+        <span>© 2026 VividScope. All rights reserved.</span>
+        <span>Secured by Clover</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button type="button" class="cart-close" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-body">
+      <div class="cart-empty" id="cartEmpty">
+        <div class="empty-icon">🛒</div>
+        <p>Your cart is empty</p>
+        <a href="products.html" class="btn btn-primary btn-sm" style="margin-top:16px;" onclick="closeCart()">Browse Products</a>
+      </div>
+      <div id="cartItems"></div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total-row">
+        <span>Subtotal</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+      <button type="button" class="btn btn-primary btn-full" data-checkout>Proceed to Checkout →</button>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+  <script>
+    document.getElementById('mobileToggle').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('status') === 'failure') {
+      document.getElementById('title').textContent = 'Payment Failed';
+      document.getElementById('message').textContent =
+        'Something went wrong processing your payment. Please try again or contact us for help.';
+    }
+  </script>
+</body>
+</html>

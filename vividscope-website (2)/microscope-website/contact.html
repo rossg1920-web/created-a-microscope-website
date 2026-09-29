@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us – VividScope</title>
+  <meta name="description" content="Contact VividScope for microscope sales, repair quotes, calibration, or general inquiries.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🔬</div>
+        VividScope
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="repair.html">Repair Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-cta active">Contact Us</a>
+      </nav>
+      <button type="button" class="cart-btn" aria-label="Open cart">
+        🛒<span class="cart-badge">0</span>
+      </button>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Sales questions, repair quotes, or general inquiries — we’re here to help.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <p>Fill out the form and we’ll respond within one business day. For urgent repair needs, call us directly.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="icon">📞</div>
+              <div>
+                <strong>Phone</strong>
+                <span>1-800-555-1234</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="icon">✉️</div>
+              <div>
+                <strong>Email</strong>
+                <span>hello@vividscope.com</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="icon">📍</div>
+              <div>
+                <strong>Address</strong>
+                <span>1240 Optics Way, Suite 200<br>Cambridge, MA 02139</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="icon">🕐</div>
+              <div>
+                <strong>Hours</strong>
+                <span>Monday – Friday<br>8:00 AM – 6:00 PM EST</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form id="contactForm" onsubmit="return handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required placeholder="Jane">
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required placeholder="Smith">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="jane@example.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+            </div>
+            <div class="form-group">
+              <label for="inquiryType">Inquiry Type *</label>
+              <select id="inquiryType" name="inquiryType" required>
+                <option value="">Select one...</option>
+                <option value="sales">Product / Sales Inquiry</option>
+                <option value="repair">Repair Quote Request</option>
+                <option value="calibration">Calibration Service</option>
+                <option value="maintenance">Maintenance Plan</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group" id="modelGroup" style="display: none;">
+              <label for="model">Microscope Brand & Model</label>
+              <input type="text" id="model" name="model" placeholder="e.g. Olympus BX51, AmScope B120">
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="Tell us how we can help..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Send Message →</button>
+            <p id="formSuccess" style="display:none; margin-top:16px; color: #0a7a4a; font-weight: 600; text-align: center;">
+              Thank you! Your message has been received. We’ll get back to you within one business day.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">🔬</div>
+            VividScope
+          </a>
+          <p>Premium microscopes and expert repair services for research, education, and industry since 2010.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All Microscopes</a></li>
+            <li><a href="products.html">Compound</a></li>
+            <li><a href="products.html">Stereo</a></li>
+            <li><a href="products.html">Digital</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="repair.html">Repair & Restoration</a></li>
+            <li><a href="repair.html">Calibration</a></li>
+            <li><a href="repair.html">Maintenance Plans</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="contact.html">Request a Quote</a></li>
+            <li><a href="mailto:hello@vividscope.com">hello@vividscope.com</a></li>
+            <li><a href="tel:+18005551234">1-800-555-1234</a></li>
+            <li>Mon–Fri 8am–6pm EST</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 VividScope. All rights reserved.</span>
+        <span>Precision Optics • Expert Service</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button type="button" class="cart-close" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-body">
+      <div class="cart-empty" id="cartEmpty">
+        <div class="empty-icon">🛒</div>
+        <p>Your cart is empty</p>
+        <a href="products.html" class="btn btn-primary btn-sm" style="margin-top:16px;" onclick="closeCart()">Browse Products</a>
+      </div>
+      <div id="cartItems"></div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total-row">
+        <span>Subtotal</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+      <button type="button" class="btn btn-primary btn-full" data-checkout>Proceed to Checkout →</button>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+  <script>
+    const toggle = document.getElementById('mobileToggle');
+    const nav = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+
+    // Show model field for repair-related inquiries
+    document.getElementById('inquiryType').addEventListener('change', function() {
+      const modelGroup = document.getElementById('modelGroup');
+      if (this.value === 'repair' || this.value === 'calibration' || this.value === 'maintenance') {
+        modelGroup.style.display = 'block';
+      } else {
+        modelGroup.style.display = 'none';
+      }
+    });
+
+    // Prefill form if arriving from cart checkout
+    (function prefillCheckout() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('checkout') !== '1') return;
+      const orderRaw = sessionStorage.getItem('vividscope_order');
+      if (!orderRaw) return;
+      try {
+        const order = JSON.parse(orderRaw);
+        const typeSelect = document.getElementById('inquiryType');
+        const message = document.getElementById('message');
+        if (typeSelect) typeSelect.value = 'sales';
+        if (message) {
+          message.value = 'I would like to place an order for the following items:\n\n' +
+            order.summary + '\n\nSubtotal: $' + order.total.toLocaleString() +
+            '\n\nPlease contact me to complete payment and shipping.';
+        }
+        // Clear after using so refresh doesn't re-fill
+        sessionStorage.removeItem('vividscope_order');
+        // Optionally clear cart after checkout initiated
+        localStorage.removeItem('vividscope_cart');
+        if (typeof updateCartUI === 'function') updateCartUI();
+      } catch (e) {}
+    })();
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('formSuccess').style.display = 'block';
+      document.getElementById('contactForm').reset();
+      document.getElementById('modelGroup').style.display = 'none';
+      return false;
+    }
+  </script>
+</body>
+</html>

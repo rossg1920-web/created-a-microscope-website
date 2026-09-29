@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Microscopes – VividScope</title>
+  <meta name="description" content="Browse compound, stereo, digital, and research microscopes. New and certified refurbished instruments.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🔬</div>
+        VividScope
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Shop</a>
+        <a href="repair.html">Repair Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+      </nav>
+      <button type="button" class="cart-btn" aria-label="Open cart">
+        🛒<span class="cart-badge">0</span>
+      </button>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Shop Microscopes</h1>
+      <p>High-quality instruments for education, research, and industrial inspection. New and certified refurbished available.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="compound">Compound</button>
+        <button class="filter-btn" data-filter="stereo">Stereo</button>
+        <button class="filter-btn" data-filter="digital">Digital</button>
+        <button class="filter-btn" data-filter="research">Research</button>
+        <button class="filter-btn" data-filter="accessories">Accessories</button>
+        <a href="#compare" class="filter-btn" style="background: var(--primary); color: white; border-color: var(--primary);">Compare Models ↓</a>
+      </div>
+
+      <div class="products-grid" id="productGrid">
+        <!-- Compound -->
+        <div class="product-card" data-category="compound">
+          <div class="product-image">
+            <span class="product-badge">Best Seller</span>
+            🔬
+          </div>
+          <div class="product-body">
+            <div class="product-category">Compound</div>
+            <h3>VS-200 Student Microscope</h3>
+            <p>40x–1000x, LED illumination, coaxial coarse/fine focus, metal frame. Perfect for classrooms.</p>
+            <div class="product-footer">
+              <div class="product-price">$249 <span>USD</span></div>
+              <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="vs-200">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="compound">
+          <div class="product-image">🔬</div>
+          <div class="product-body">
+            <div class="product-category">Compound</div>
+            <h3>VS-400 Advanced Compound</h3>
+            <p>40x–1000x, Abbe condenser, mechanical stage, dual-view head option. College & lab ready.</p>
+            <div class="product-footer">
+              <div class="product-price">$549 <span>USD</span></div>
+              <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="vs-400">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stereo -->
+        <div class="product-card" data-category="stereo">
+          <div class="product-image">🔬</div>
+          <div class="product-body">
+            <div class="product-category">Stereo</div>
+            <h3>VS-Stereo 40</h3>
+            <p>10x–40x continuous zoom, dual LED incident & transmitted light. Ideal for dissection.</p>
+            <div class="product-footer">
+              <div class="product-price">$389 <span>USD</span></div>
+              <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="vs-stereo-40">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="stereo">
+          <div class="product-image">
+            <span class="product-badge">New</span>
+            🔬
+          </div>
+          <div class="product-body">
+            <div class="product-category">Stereo</div>
+            <h3>VS-Stereo Zoom 90</h3>
+            <p>7x–90x zoom range, click-stop objectives, boom stand option. Industrial inspection grade.</p>
+            <div class="product-footer">
+              <div class="product-price">$1,150 <span>USD</span></div>
+              <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="vs-stereo-90">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Digital -->
+        <div class="product-card" data-category="digital">
+          <div class="product-image">
+            <span class="product-badge">Pro</span>
+            🔬
+          </div>
+          <div class="product-body">
+            <div class="product-category">Digital</div>
+            <h3>VS-Digital Pro 5MP</h3>
+            <p>5MP CMOS camera, 40x–1000x, HDMI + USB, measurement software included.</p>
+            <div class="product-footer">
+              <div class="product-price">$799 <span>USD</span></div>
+              <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="vs-digital-pro">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="digital">
+          <div class="product-image">🔬</div>
+          <div class="product-body">
+            <div class="product-category">Digital</div>
+            <h3>VS-Tablet Microscope</h3>
+            <p>Integrated 10" touchscreen, 5MP camera, Wi-Fi sharing, battery powered. Portable & modern.</p>
+            <div class="product-footer">
+              <div class="product-price">$1,299 <span>USD</span></div>
+              <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="vs-tablet">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Research -->
+        <div class="product-card" data-category="research">
+          <div class="product-image">
+            <span class="product-badge">Lab</span>
+            🔬
+          </div>
+          <div class="product-body">
+            <div class="product-category">Research</div>
+            <h3>VS-Research Infinity</h3>
+            <p>Infinity-corrected plan optics, trinocular, phase contrast ready, 100W halogen or LED.</p>
+            <div class="product-footer">
+              <div class="product-price">$2,450 <span>USD</span></div>
+              <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="vs-research">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="research">
+          <div class="product-image">🔬</div>
+          <div class="product-body">
+            <div class="product-category">Research</div>
+            <h3>VS-Fluorescence System</h3>
+            <p>Epi-fluorescence ready, multi-filter turret, cooled camera option. For advanced imaging.</p>
+            <div class="product-footer">
+              <div class="product-price">$8,900 <span>USD</span></div>
+              <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="vs-fluorescence">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accessories -->
+        <div class="product-card" data-category="accessories">
+          <div class="product-image">📷</div>
+          <div class="product-body">
+            <div class="product-category">Accessories</div>
+            <h3>5MP USB Camera Kit</h3>
+            <p>C-mount camera with software for measurement, annotation, and time-lapse capture.</p>
+            <div class="product-footer">
+              <div class="product-price">$189 <span>USD</span></div>
+              <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="cam-5mp">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="accessories">
+          <div class="product-image">💡</div>
+          <div class="product-body">
+            <div class="product-category">Accessories</div>
+            <h3>LED Illumination Upgrade</h3>
+            <p>Replace halogen with cool, long-life LED. Kits for most major brands available.</p>
+            <div class="product-footer">
+              <div class="product-price">$129 <span>USD</span></div>
+              <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="led-upgrade">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="accessories">
+          <div class="product-image">📦</div>
+          <div class="product-body">
+            <div class="product-category">Accessories</div>
+            <h3>Prepared Slide Set (50)</h3>
+            <p>Curated biology & histology slides. Ideal for teaching and demonstration.</p>
+            <div class="product-footer">
+              <div class="product-price">$79 <span>USD</span></div>
+              <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="slides-50">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="compound">
+          <div class="product-image">
+            <span class="product-badge">Refurbished</span>
+            🔬
+          </div>
+          <div class="product-body">
+            <div class="product-category">Compound</div>
+            <h3>Certified Pre-Owned Olympus CX23</h3>
+            <p>Fully serviced, calibrated, and warrantied. Excellent entry into a premium brand.</p>
+            <div class="product-footer">
+              <div class="product-price">$1,150 <span>USD</span></div>
+              <button type="button" class="btn btn-primary btn-sm" data-add-to-cart="olympus-cx23">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Comparison -->
+  <section class="section" style="background: white;" id="compare">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Side-by-Side</span>
+        <h2>Product Comparison</h2>
+        <p>Compare key specifications across our most popular microscopes to find the best fit.</p>
+      </div>
+
+      <div class="comparison-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Specification</th>
+              <th>
+                <span class="model-name">VS-200</span>
+                <span class="model-type">Student Compound</span>
+              </th>
+              <th>
+                <span class="model-name">VS-400</span>
+                <span class="model-type">Advanced Compound</span>
+              </th>
+              <th>
+                <span class="model-name">VS-Stereo 40</span>
+                <span class="model-type">Stereo</span>
+              </th>
+              <th>
+                <span class="model-name">VS-Digital Pro</span>
+                <span class="model-type">Digital</span>
+              </th>
+              <th>
+                <span class="model-name">VS-Research Infinity</span>
+                <span class="model-type">Research</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Magnification</td>
+              <td>40× – 1000×</td>
+              <td>40× – 1000×</td>
+              <td>10× – 40× zoom</td>
+              <td>40× – 1000×</td>
+              <td>40× – 1000×</td>
+            </tr>
+            <tr>
+              <td>Optics</td>
+              <td>Achromatic</td>
+              <td>Plan achromatic</td>
+              <td>Greenough stereo</td>
+              <td>Achromatic</td>
+              <td>Infinity plan</td>
+            </tr>
+            <tr>
+              <td>Illumination</td>
+              <td>LED (cordless option)</td>
+              <td>LED + Abbe condenser</td>
+              <td>Dual LED (incident + transmitted)</td>
+              <td>LED</td>
+              <td>100W halogen or LED</td>
+            </tr>
+            <tr>
+              <td>Head</td>
+              <td>Monocular</td>
+              <td>Binocular (dual-view option)</td>
+              <td>Binocular</td>
+              <td>Binocular + camera</td>
+              <td>Trinocular</td>
+            </tr>
+            <tr>
+              <td>Camera</td>
+              <td><span class="cross">—</span></td>
+              <td><span class="cross">—</span></td>
+              <td><span class="cross">—</span></td>
+              <td><span class="check">5 MP included</span></td>
+              <td>Optional (C-mount)</td>
+            </tr>
+            <tr>
+              <td>Stage</td>
+              <td>Fixed with clips</td>
+              <td>Mechanical XY</td>
+              <td>Plain / optional boom</td>
+              <td>Mechanical XY</td>
+              <td>Mechanical XY, rackless</td>
+            </tr>
+            <tr>
+              <td>Phase Contrast</td>
+              <td><span class="cross">—</span></td>
+              <td><span class="cross">—</span></td>
+              <td><span class="cross">—</span></td>
+              <td><span class="cross">—</span></td>
+              <td><span class="check">Ready</span></td>
+            </tr>
+            <tr>
+              <td>Best For</td>
+              <td>Classrooms, beginners</td>
+              <td>College labs, advanced students</td>
+              <td>Dissection, inspection</td>
+              <td>Documentation, teaching</td>
+              <td>Research, clinical labs</td>
+            </tr>
+            <tr>
+              <td>Warranty</td>
+              <td>2 years</td>
+              <td>2 years</td>
+              <td>2 years</td>
+              <td>2 years</td>
+              <td>3 years</td>
+            </tr>
+            <tr>
+              <td>Price</td>
+              <td class="price-cell">$249</td>
+              <td class="price-cell">$549</td>
+              <td class="price-cell">$389</td>
+              <td class="price-cell">$799</td>
+              <td class="price-cell">$2,450</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><button type="button" class="btn btn-primary btn-sm" data-add-to-cart="vs-200">Add to Cart</button></td>
+              <td><button type="button" class="btn btn-primary btn-sm" data-add-to-cart="vs-400">Add to Cart</button></td>
+              <td><button type="button" class="btn btn-primary btn-sm" data-add-to-cart="vs-stereo-40">Add to Cart</button></td>
+              <td><button type="button" class="btn btn-primary btn-sm" data-add-to-cart="vs-digital-pro">Add to Cart</button></td>
+              <td><button type="button" class="btn btn-primary btn-sm" data-add-to-cart="vs-research">Add to Cart</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="comparison-note">Prices in USD. Specs subject to change. Contact us for current availability, bulk pricing, and custom configurations.</p>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Need Help Choosing?</h2>
+      <p>Our specialists can recommend the right microscope for your application and budget.</p>
+      <a href="contact.html" class="btn">Talk to an Expert →</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <div class="logo-icon">🔬</div>
+            VividScope
+          </a>
+          <p>Premium microscopes and expert repair services for research, education, and industry since 2010.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All Microscopes</a></li>
+            <li><a href="products.html">Compound</a></li>
+            <li><a href="products.html">Stereo</a></li>
+            <li><a href="products.html">Digital</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="repair.html">Repair & Restoration</a></li>
+            <li><a href="repair.html">Calibration</a></li>
+            <li><a href="repair.html">Maintenance Plans</a></li>
+            <li><a href="about.html">About Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="contact.html">Request a Quote</a></li>
+            <li><a href="mailto:hello@vividscope.com">hello@vividscope.com</a></li>
+            <li><a href="tel:+18005551234">1-800-555-1234</a></li>
+            <li>Mon–Fri 8am–6pm EST</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 VividScope. All rights reserved.</span>
+        <span>Precision Optics • Expert Service</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button type="button" class="cart-close" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-body">
+      <div class="cart-empty" id="cartEmpty">
+        <div class="empty-icon">🛒</div>
+        <p>Your cart is empty</p>
+        <a href="products.html" class="btn btn-primary btn-sm" style="margin-top:16px;" onclick="closeCart()">Browse Products</a>
+      </div>
+      <div id="cartItems"></div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total-row">
+        <span>Subtotal</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+      <button type="button" class="btn btn-primary btn-full" data-checkout>Proceed to Checkout →</button>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+  <script>
+    const toggle = document.getElementById('mobileToggle');
+    const nav = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+
+    // Filter products
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const products = document.querySelectorAll('.product-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Skip the compare link (it's an <a>, not a filter button with data-filter only on buttons)
+        if (!btn.dataset.filter) return;
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        products.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

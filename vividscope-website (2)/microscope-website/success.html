@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Successful – VividScope</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .result-page {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+    .result-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      padding: 48px 40px;
+      text-align: center;
+      max-width: 480px;
+      width: 100%;
+    }
+    .result-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #d1fae5;
+      color: #059669;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+    .result-card h1 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+    .result-card p {
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+    .result-meta {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 16px;
+      margin: 24px 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-align: left;
+    }
+    .result-meta strong {
+      color: var(--primary);
+    }
+    .demo-banner {
+      background: #fef3c7;
+      color: #92400e;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .result-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🔬</div>
+        VividScope
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="repair.html">Repair Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-cta">Contact Us</a>
+      </nav>
+      <button type="button" class="cart-btn" aria-label="Open cart">
+        🛒<span class="cart-badge">0</span>
+      </button>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="result-page">
+    <div class="result-card">
+      <div id="demoBanner" class="demo-banner" style="display:none;">
+        Demo mode — no real charge was made. Connect Clover credentials in .env for live payments.
+      </div>
+      <div class="result-icon">✓</div>
+      <h1>Payment Successful</h1>
+      <p>Thank you for your order. We’ve received your payment and will be in touch shortly with shipping details.</p>
+      <div class="result-meta" id="orderMeta">
+        <div>A confirmation has been sent if an email was provided during checkout.</div>
+      </div>
+      <div class="result-actions">
+        <a href="products.html" class="btn btn-primary">Continue Shopping</a>
+        <a href="index.html" class="btn" style="background:var(--bg);color:var(--primary);border:1px solid var(--border);">Back to Home</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none;padding-top:0;">
+        <span>© 2026 VividScope. All rights reserved.</span>
+        <span>Secured by Clover</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart drawer (minimal) -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button type="button" class="cart-close" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-body">
+      <div class="cart-empty" id="cartEmpty">
+        <div class="empty-icon">🛒</div>
+        <p>Your cart is empty</p>
+      </div>
+      <div id="cartItems"></div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total-row">
+        <span>Subtotal</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+      <button type="button" class="btn btn-primary btn-full" data-checkout>Proceed to Checkout →</button>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+  <script>
+    document.getElementById('mobileToggle').addEventListener('click', function () {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // Clear cart after successful payment
+    try {
+      localStorage.removeItem('vividscope_cart');
+      if (typeof updateCartUI === 'function') updateCartUI();
+    } catch (e) {}
+
+    // Show demo banner / amount if present
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('demo') === '1') {
+      document.getElementById('demoBanner').style.display = 'block';
+      const amount = params.get('amount');
+      if (amount) {
+        const dollars = (parseInt(amount, 10) / 100).toFixed(2);
+        document.getElementById('orderMeta').innerHTML =
+          '<div><strong>Demo order total:</strong> $' + dollars + '</div>' +
+          '<div style="margin-top:6px;">Session: ' + (params.get('session') || '—') + '</div>';
+      }
+    }
+  </script>
+</body>
+</html>

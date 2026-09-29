@@ -1,0 +1,23 @@
+# Render Blueprint – https://render.com/docs/blueprint-spec
+# Deploy: connect this repo in Render → "New" → "Blueprint"
+services:
+  - type: web
+    name: vividscope
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python3 server.py
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: "8080"
+      - key: CLOVER_ENV
+        value: sandbox
+      - key: SITE_BASE_URL
+        # After first deploy, set this to your Render URL, e.g.
+        # https://vividscope.onrender.com
+        sync: false
+      - key: CLOVER_MERCHANT_ID
+        sync: false
+      - key: CLOVER_PRIVATE_TOKEN
+        sync: false
